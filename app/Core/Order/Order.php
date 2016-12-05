@@ -15,6 +15,8 @@ class Order extends Model
     protected $table = 'orders';
 
     protected $fillable = ['subtotal', 'shipping', 'user_id'];
+
+    // Relation with User
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -22,6 +24,6 @@ class Order extends Model
 
     public function order_items()
     {
-        return $this->hasMany('App\Core\OrderItem\OrderItem');
+        return $this->hasMany('App\OrderItem');
     }
 }

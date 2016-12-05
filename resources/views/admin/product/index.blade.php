@@ -26,8 +26,9 @@
                             {{--<th>DESCRIPSION</th>--}}
                             <th>PRECIO</th>
                             <th>STOCK</th>
-                            <th>ESTADO</th>
-                            <th>ACCIONES</th>
+                            <th>ACTIVO</th>
+                            <th>EDITAR</th>
+                            <th>ELIMINAR</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -43,8 +44,15 @@
                                 <td style="text-align: center">
                                     {{--<div> <button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></div>--}}
                                     {{--<div style="padding-top: 1rem"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></div>--}}
-                                    <button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    <a href="{{ route('admin.product.edit',$product->slug)}}" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                </td>
+                                <td style="text-align: center">
+                                    {!! Form::open(['route' => ['admin.product.destroy', $product->slug]]) !!}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach

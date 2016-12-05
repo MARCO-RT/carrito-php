@@ -6,7 +6,7 @@
             <i style="color:#f3c500 " class="fa fa-shopping-cart"></i>
             Ctegoria
 
-            <button type="button" data-toggle="modal" data-target="#modal_crear" class="btn btn-success"><i class="fa fa-plus-circle"></i><span> Usuarios</span></button>
+            <a href="{{route('admin.user.create')}}" type="button"  class="btn btn-success"><i class="fa fa-plus-circle"></i><span> Usuarios</span></a>
         </h1>
     </div>
     <div class="col-lg-offset-1 col-lg-10">
@@ -25,7 +25,8 @@
                             <th>USUARIO</th>
                             <th>TIPO</th>
                             <th>ACTIVO</th>
-                            <th>ACCIONES</th>
+                            <th>EDITAR</th>
+                            <th>ELIMINAR</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -37,8 +38,16 @@
                                 <td>{{$user->type}}</td>
                                 <td>{{ $user->active == 1 ? "Si" : "No" }}</td>
                                 <td style="text-align: center">
-                                    <button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    <a href="{{ route('admin.user.edit', $user) }}" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+
+                                </td>
+                                <td style="text-align: center">
+                                    {!! Form::open(['route' => ['admin.user.destroy', $user]]) !!}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach

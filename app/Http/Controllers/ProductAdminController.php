@@ -70,42 +70,74 @@ class ProductAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show(Product $product)
     {
-        //
+        return $product;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        $categories = Category::orderBy('id', 'desc')->lists('name', 'id');
+//        dd($product,$product);
+
+        return view('admin.product.editar', compact('categories', 'product'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->fill($request->all());
+        $product->slug = str_slug($request->get('name'));
+        $product->estado = $request->has('visible') ? 1 : 2;
+
+        $updated = $product->save();
+
+        $message = $updated ? 'Producto actualizado correctamente!' : 'El Producto NO pudo actualizarse!';
+
+        return redirect()->route('admin.product.index')->with('message', $message);
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
+     */
+
+    public function destroy(Product $product)
+    {
+        $deleted = $product->delete();
+
+        $message = $deleted ? 'Producto eliminado correctamente!' : 'El producto NO pudo eliminarse!';
+
+        return redirect()->route('admin.product.index')->with('message', $message);
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
 }

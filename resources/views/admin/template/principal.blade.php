@@ -283,7 +283,7 @@
                         <a href="forms.html"><i class="fa fa-check-circle"></i> USUARIOS</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-check-circle"></i> </a>
+                        <a href="forms.html"><i class="fa fa-check-circle"></i> PEDIDOS</a>
                     </li>
                 </ul>
             </div>
@@ -319,7 +319,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{url('/')}}/newstyle/dist/js/sb-admin-2.js"></script>
-
+<script src="{{url('/')}}/admin/js/main.js"></script>
 </body>
 
 </html>

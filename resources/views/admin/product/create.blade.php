@@ -16,17 +16,10 @@
                 {!! Form::open(['route'=>'admin.product.store','method' => 'post']) !!}
                     <div class="col-lg-10 form-group">
                         <label style="color: #01a185" class="control-label" for="category_id">Categoría</label>
-                        {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
-                        {{--<select class="form-control">--}}
-                            {{--<option value="category_id">{{$categories->name}}</option>--}}
-                            {{--<option>2</option>--}}
-                            {{--<option>3</option>--}}
-                            {{--<option>4</option>--}}
-                            {{--<option>5</option>--}}
-                        {{--</select>--}}
+                        {!! Form::select('category_id', $categories, 'categorias', ['class' => 'form-control']) !!}
                     </div>
                 <div class="col-lg-5 form-group" class="form-group">
-                        <label style="color: #01a185">CODIGO</label>
+                        <label style="color: #01a185">CÓDIGO</label>
                         <input autofocus type="text" name="code" class="form-control" placeholder="ingrese el nombre">
                 </div>
                     <div class="col-lg-5 form-group" class="form-group">
@@ -41,7 +34,7 @@
 
                 <div class="col-lg-5 form-group" class="form-group">
                     <label style="color: #01a185">PRECIO</label>
-                    <input type="number" name="price" class="form-control">
+                    <input type="number" name="price" step="any" class="form-control">
                 </div>
                     <div class=" col-lg-5 form-group" class="form-group">
                         <label style="color: #01a185">STOCK</label>
@@ -52,7 +45,7 @@
                         <textarea class="form-control" name="description" rows="4"></textarea>
                     </div>
                     <div class="col-lg-10 form-group">
-                        <label style="color: #01a185">ESTADO</label>
+                        <label style="color: #01a185">ACTIVO</label>
                         <label class="radio-inline">
                             <input type="radio" name="estado"  value="1" checked="">ACTIVO
                         </label>

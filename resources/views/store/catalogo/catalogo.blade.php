@@ -14,6 +14,7 @@
                                     <img style="width: 200px;height: 300px" src="{{url('/')}}/{{$product->image}}" alt="...">
                                     <div  style="text-align: center" class="caption">
                                         <h3 style="text-align: center;padding-top: 1rem;padding-bottom: 2rem"><span style="color:#00a65a">Precio:</span> <span style="color: #f3c500 "> ${{$product->price}}</span></h3>
+                                        <h3 style="text-align: center;padding-top: 1rem;padding-bottom: 2rem"><span style="color:#00a65a">Stock:</span> <span style="color: #f3c500 ">{{$product->stock}}</span></h3>
                                         <p>
                                             <a href="{{route('carrito-add',$product->slug)}}" class="btn btn-success" role="button">Comprar</a>
                                             <a href="{{route('producto-detalle',$product->slug)}}" class="btn btn-info" role="button">Ver mas</a>
