@@ -2,9 +2,10 @@
 @section('content')
 <div class="container text-center">
 
-    <div class="page-header">
-        <h1>
-            <i class="fa fa-user"></i> USUARIOS <small>[ Agregar usuario ]</small>
+    <div class="col-lg-12">
+        <h1 class="page-header" style="text-align: center;color:#01a185 ">
+            <i style="color:#f3c500 " class="fa fa-user"></i>
+            Nuevo Usuario
         </h1>
     </div>
 

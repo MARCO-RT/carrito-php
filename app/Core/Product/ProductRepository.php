@@ -66,4 +66,18 @@ class ProductRepository implements BaseRepositoryInterface
         })->paginate(6);
         return $resultado;
     }
+
+    public function ProductosFavoritos()
+    {
+        $result = \DB::select("SELECT *, (SELECT SUM(quantity) from order_items WHERE order_items.product_id = products.id ) as suma FROM products  
+                                ORDER BY suma DESC LIMIT 4");
+        return $result;
+    }
+    public function ProductosFavoritos2()
+    {
+        $result = \DB::select("SELECT *, (SELECT SUM(quantity) from order_items WHERE order_items.product_id = products.id ) as suma FROM products  
+                                ORDER BY suma DESC LIMIT 4 OFFSET 4");
+        return $result;
+    }
+
 }

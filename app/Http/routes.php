@@ -133,6 +133,9 @@ Route::get('detalle-pedido',[
         Route::resource('category', 'CategoryAdminController');
         Route::resource('user', 'UserAdminController');
         Route::resource('product', 'ProductAdminController');
+
+
+
         Route::get('orders', [
             'as' => 'admin.order.index',
             'uses' => 'OrderController@index'
@@ -143,10 +146,6 @@ Route::get('detalle-pedido',[
             'uses' => 'OrderController@getItems'
         ]);
 
-        Route::get('order/{id}', [
-            'as' => 'admin.order.destroy',
-            'uses' => 'OrderController@destroy'
-        ]);
     });
 
 

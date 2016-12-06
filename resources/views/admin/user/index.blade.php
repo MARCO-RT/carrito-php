@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <h1 class="page-header" style="text-align: center;color:#01a185 ">
             <i style="color:#f3c500 " class="fa fa-shopping-cart"></i>
-            Ctegoria
+            Usuarios
 
             <a href="{{route('admin.user.create')}}" type="button"  class="btn btn-success"><i class="fa fa-plus-circle"></i><span> Usuarios</span></a>
         </h1>

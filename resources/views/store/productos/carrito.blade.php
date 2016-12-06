@@ -70,7 +70,8 @@
         </div>
         @else
             <div style="padding-top: 10rem;padding-bottom: 10rem" class="col-lg-12">
-                <h3 style="text-align: center"><span class="label label-warning">No hay Productos en el Carrito :(</span></h3>
+            <h3 style="text-align: center"><span class="label label-warning">No hay Productos en el Carrito :(</span></h3>
+                <div style="text-align: center;margin-top: 3rem" class="col-lg-12"><a style="font-weight: bold" href="{{route('home')}}" type="button" class="btn btn-success">Agregar Productos</a></div>
             </div>
         @endif
     </div>

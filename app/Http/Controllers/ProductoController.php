@@ -103,8 +103,9 @@ class ProductoController extends Controller
     public function categories($slug)
     {
 //        $total_categories = $this->repoCategory->getCountProductByCategory();
+        $category=\DB:: table('categories')->where('slug',$slug)->get();
         $products = $this->repoProductos->getProductsByCategoryId($slug);
-        return view('store.catalogo.catalogo', compact('slug', 'products'));
+        return view('store.catalogo.catalogo', compact('slug', 'products','category'));
 //        dd($products->toArray());
     }
 

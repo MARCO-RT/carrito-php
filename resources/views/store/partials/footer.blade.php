@@ -15,7 +15,7 @@
                 </ul>
             </div>
             <div class="copyrights">
-                <p> © 2016 Resale. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+                <p> © 2016 Realizado por ENCODERS | Design by  <a href="http://w3layouts.com/"> UCP-SISTEMAS</a></p>
             </div>
             <div class="clearfix"></div>
         </div>

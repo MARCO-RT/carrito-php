@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Core\Order\Order;
-use app\Core\Order_item\Order_item;
+use App\Core\Order_item\Order_item;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,20 +19,10 @@ class OrderController extends Controller
         return view('admin.order.index', compact('orders'));
     }
 
+
     public function getItems(Request $request)
     {
-        $items = OrderItem::with('product')->where('order_id', $request->get('order_id'))->get();
+        $items =Order_item::with('product')->where('order_id', $request->get('order_id'))->get();
         return json_encode($items);
-    }
-
-    public function destroy($id)
-    {
-        $order = Order::findOrFail($id);
-
-        $deleted = $order->delete();
-
-        $message = $deleted ? 'Pedido eliminado correctamente!' : 'El Pedido NO pudo eliminarse!';
-
-        return redirect()->route('admin.order.index')->with('message', $message);
     }
 }

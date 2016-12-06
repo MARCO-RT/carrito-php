@@ -21,12 +21,12 @@ class Order_item extends Model
 
     public function order()
     {
-        return $this->belongsTo('App\Order');
+        return $this->belongsTo('App\Core\Order\Order');
     }
 
     public function product()
     {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('App\Core\Product\Product');
     }
 
 }

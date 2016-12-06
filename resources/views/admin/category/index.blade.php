@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <h1 class="page-header" style="text-align: center;color:#01a185 ">
                 <i style="color:#f3c500 " class="fa fa-shopping-cart"></i>
-                Ctegoria
+                Categorias
 
                 {{--<button type="button" data-toggle="modal" data-target="#modal_crear" class="btn btn-success"><i class="fa fa-plus-circle"></i><span> Categoria</span></button>--}}
                 <a href="{{route('admin.category.create')}}" type="button"  class="btn btn-success"><i class="fa fa-plus-circle"></i><span> Categoria</span></a>
@@ -59,38 +59,5 @@
             </div>
             <!-- /.panel -->
         </div>
-
-        {{--modal crear categoria--}}
-        {{--<div class="modal fade" id="modal_crear" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">--}}
-            {{--<div class="modal-dialog" role="document">--}}
-                {{--<div class="modal-content">--}}
-                    {{--<div class="modal-header">--}}
-                        {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
-                        {{--<h4 class="modal-title" id="gridSystemModalLabel"style="color: #01a185"> <span style="color: #f3c500">Crear</span> Categoria</h4>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-body">--}}
-                        {{--<div class="row">--}}
-                            {{--<div class="col-lg-offset-2 col-lg-8">--}}
-                                {{--{!! Form::open(['route' => 'admin.category.store','method' => 'post']) !!}--}}
-                                    {{--<div class="form-group" class="form-group">--}}
-                                        {{--<label style="color:#01a185 ">NOMBRE</label>--}}
-                                        {{--<input type="text" class="form-control" placeholder="ingrese el nombre">--}}
-                                    {{--</div>--}}
-                                    {{--<div class="form-group" class="form-group">--}}
-                                        {{--<label style="color: #01a185">ICONO</label>--}}
-                                        {{--<input type="text" class="form-control" placeholder="ingrese el nombre del icono">--}}
-                                    {{--</div>--}}
-                                {{--{!! Form::close() !!}--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                    {{--</div>--}}
-                    {{--<div class="modal-footer">--}}
-                        {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
-                        {{--<button type="submit" class="btn btn-success">Guardar</button>--}}
-                    {{--</div>--}}
-                {{--</div><!-- /.modal-content -->--}}
-            {{--</div><!-- /.modal-dialog -->--}}
-        {{--</div><!-- /.modal -->--}}
 
         @endsection
